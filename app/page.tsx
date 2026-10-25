@@ -3,43 +3,44 @@
 import { useState } from "react";
 
 const categories = [
-  { name: "Beauty", icon: "✦", accent: "pink" },
-  { name: "Home", icon: "⌂", accent: "gold" },
-  { name: "Digital", icon: "⊞", accent: "purple" },
+  { name: "Home & Living", icon: "⌂", accent: "amber" },
+  { name: "Beauty & Care", icon: "✦", accent: "rose" },
+  { name: "Digital Goods", icon: "◫", accent: "violet" },
   { name: "Fashion", icon: "◌", accent: "red" },
   { name: "Wellness", icon: "❋", accent: "green" },
-  { name: "Lifestyle", icon: "☼", accent: "blue" },
+  { name: "Office & Studio", icon: "▣", accent: "slate" },
 ];
 
-const featuredStores = [
+const stores = [
   { name: "North & Pine", tag: "Home goods", sales: "18.4k orders" },
-  { name: "Velvet Theory", tag: "Beauty & wellness", sales: "12.7k orders" },
+  { name: "Velvet Theory", tag: "Beauty & self care", sales: "12.7k orders" },
   { name: "Signal Studio", tag: "Creators & digital", sales: "9.8k orders" },
 ];
 
 const products = [
-  { name: "Handmade ceramic vase", price: "$79", rating: "4.9", badge: "Bestseller" },
-  { name: "Digital planning bundle", price: "$29", rating: "4.8", badge: "New" },
-  { name: "Glow face serum", price: "$54", rating: "4.9", badge: "Top rated" },
-  { name: "Minimal desk set", price: "$61", rating: "4.7", badge: "Trending" },
+  { name: "Stoneware Dinner Set", price: "$89", rating: "4.9", badge: "Best seller" },
+  { name: "Digital Planner Kit", price: "$29", rating: "4.8", badge: "New" },
+  { name: "Vitamin C Serum", price: "$46", rating: "4.9", badge: "Top rated" },
+  { name: "Leather Desk Tray", price: "$64", rating: "4.7", badge: "Trending" },
 ];
 
 const steps = [
-  { title: "Launch your storefront", text: "Create a branded shop with your own products, values, and categories." },
-  { title: "Reach buyers nationwide", text: "Get discovered through discoverability, category placement, and social commerce." },
-  { title: "Manage growth", text: "Track orders, communicate with shoppers, and scale with analytics and admin tools." },
+  { title: "Create your store", text: "Set up a storefront, add products, and define your brand in a few steps." },
+  { title: "Reach ready-to-buy shoppers", text: "Show up in categories and discoverability tools built for modern shopping behavior." },
+  { title: "Manage orders and growth", text: "Track fulfillment, customer communication, and revenue without juggling multiple tools." },
 ];
 
 const testimonials = [
-  { quote: "Social Marketplace gave our boutique a polished storefront and a real growth engine without giving up our brand identity.", author: "Ariana Stone", title: "Founder, North & Pine" },
-  { quote: "The platform feels premium and easy to use. We can sell, track, and optimize everything from one place.", author: "Marcus Bell", title: "Owner, Signal Studio" },
+  { quote: "We launched our boutique in less than a week and started converting from day one. The platform feels premium without being complicated.", author: "Ariana Stone", title: "Founder, North & Pine" },
+  { quote: "The quality of the buyer experience matters. Social Marketplace gives us a storefront that feels established, not patchworked together.", author: "Marcus Bell", title: "Owner, Signal Studio" },
+  { quote: "We moved from a basic Etsy setup to a more professional storefront and saw better repeat customers almost immediately.", author: "Nia Patel", title: "Brand Director, Velvet Theory" },
 ];
 
 export default function HomePage() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     if (email.trim()) {
       setSubmitted(true);
@@ -74,10 +75,10 @@ export default function HomePage() {
         <section className="hero-section">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <div className="eyebrow">Built for creators, brands, and independent sellers</div>
-              <h1>Sell smarter with a marketplace designed for modern commerce.</h1>
+              <div className="eyebrow">Marketplace for growing brands and independent sellers</div>
+              <h1>Build a storefront that looks established and sells with confidence.</h1>
               <p>
-                Social Marketplace brings independent sellers, businesses, and creators together in one premium platform built for the United States market.
+                Social Marketplace helps brands, creators, and small businesses launch online stores, manage customer relationships, and grow sales in a modern digital marketplace built for the United States market.
               </p>
 
               <div className="hero-actions">
@@ -88,7 +89,7 @@ export default function HomePage() {
               <div className="stats-row">
                 <div>
                   <strong>24K+</strong>
-                  <span>buyers</span>
+                  <span>active shoppers</span>
                 </div>
                 <div>
                   <strong>4.9/5</strong>
@@ -96,7 +97,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <strong>$3.8M</strong>
-                  <span>monthly volume</span>
+                  <span>monthly sales</span>
                 </div>
               </div>
             </div>
@@ -113,19 +114,19 @@ export default function HomePage() {
               <div className="showcase-card">
                 <div className="product-visual">👜</div>
                 <div className="showcase-copy">
-                  <span className="tag">Bestseller</span>
-                  <h3>Handmade Ceramic Vase</h3>
+                  <span className="tag">Best seller</span>
+                  <h3>Stoneware Dinner Set</h3>
                   <div className="meta-row">
-                    <span>4.9 stars</span>
-                    <strong>$79</strong>
+                    <span>4.9 rating</span>
+                    <strong>$89</strong>
                   </div>
                 </div>
               </div>
 
               <div className="mini-stack">
                 <div className="mini-stat">
-                  <strong>1100+</strong>
-                  <span>new products</span>
+                  <strong>1,100+</strong>
+                  <span>new listings</span>
                 </div>
                 <div className="mini-stat">
                   <strong>92%</strong>
@@ -136,12 +137,24 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="section trust-bar">
+          <div className="container trust-row">
+            <span>Trusted across home, beauty, wellness, and digital categories</span>
+            <div className="trust-logos">
+              <strong>North & Pine</strong>
+              <strong>Velvet Theory</strong>
+              <strong>Signal Studio</strong>
+              <strong>Gather & Co.</strong>
+            </div>
+          </div>
+        </section>
+
         <section className="section" id="categories">
           <div className="container">
             <div className="section-heading">
               <div>
-                <div className="eyebrow">Explore the marketplace</div>
-                <h2>Discover categories built for everyday discovery.</h2>
+                <div className="eyebrow">Popular categories</div>
+                <h2>Find what shoppers are already buying.</h2>
               </div>
               <a href="#" className="text-link">View all categories</a>
             </div>
@@ -151,7 +164,7 @@ export default function HomePage() {
                 <article key={category.name} className={`category-card ${category.accent}`}>
                   <div className="category-icon">{category.icon}</div>
                   <h3>{category.name}</h3>
-                  <p>Curated collections and handcrafted essentials for your next favorite find.</p>
+                  <p>Handpicked products and curated collections designed for modern buying habits.</p>
                 </article>
               ))}
             </div>
@@ -162,13 +175,13 @@ export default function HomePage() {
           <div className="container">
             <div className="section-heading">
               <div>
-                <div className="eyebrow">Featured storefronts</div>
-                <h2>Top-performing shops and independent brands.</h2>
+                <div className="eyebrow">Featured stores</div>
+                <h2>Independent brands with momentum.</h2>
               </div>
             </div>
 
             <div className="stores-grid">
-              {featuredStores.map((store) => (
+              {stores.map((store) => (
                 <article className="store-card" key={store.name}>
                   <div className="store-avatar">{store.name.charAt(0)}</div>
                   <div className="store-body">
@@ -189,7 +202,7 @@ export default function HomePage() {
           <div className="container">
             <div className="section-heading center">
               <div className="eyebrow">How it works</div>
-              <h2>Everything you need to build and grow your business.</h2>
+              <h2>Launch and grow without the technical overhead.</h2>
             </div>
 
             <div className="steps-grid">
@@ -209,7 +222,7 @@ export default function HomePage() {
             <div className="section-heading">
               <div>
                 <div className="eyebrow">Best sellers</div>
-                <h2>Premium products customers are already loving.</h2>
+                <h2>Premium products customers return for.</h2>
               </div>
             </div>
 
@@ -235,8 +248,8 @@ export default function HomePage() {
         <section className="section" id="reviews">
           <div className="container">
             <div className="section-heading center">
-              <div className="eyebrow">Customer stories</div>
-              <h2>Why sellers and shoppers stay with Social Marketplace.</h2>
+              <div className="eyebrow">What sellers say</div>
+              <h2>Built for real businesses, not just storefront demos.</h2>
             </div>
 
             <div className="testimonial-grid">
@@ -257,7 +270,7 @@ export default function HomePage() {
           <div className="container cta-box">
             <div>
               <div className="eyebrow light">Ready to grow?</div>
-              <h2>Launch your storefront and start selling with confidence.</h2>
+              <h2>Launch your store and start selling with a more professional foundation.</h2>
             </div>
 
             <form className="newsletter-form" onSubmit={handleSubmit}>
@@ -271,7 +284,7 @@ export default function HomePage() {
               <button type="submit" className="btn btn-primary">Join now</button>
             </form>
 
-            {submitted ? <div className="form-success">Thanks! We’ll be in touch with your launch checklist.</div> : null}
+            {submitted ? <div className="form-success">Thanks. We’ll send a launch checklist and next steps.</div> : null}
           </div>
         </section>
       </main>
@@ -283,7 +296,7 @@ export default function HomePage() {
               <div className="brand-mark">S</div>
               <div className="brand-name">Social Marketplace</div>
             </div>
-            <p>Premium marketplace infrastructure for independent sellers and growing brands.</p>
+            <p>Marketplace infrastructure for independent brands, local makers, and modern digital sellers.</p>
           </div>
 
           <div className="footer-links">
